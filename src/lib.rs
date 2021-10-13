@@ -62,7 +62,7 @@ impl DougsClient {
         //     curr_state.canvas_width,
         // );
 
-        // self.program_color_2d_gradient.render(
+        // self._program_color_2d_gradient.render(
         //     &self.gl,
         //     curr_state.control_bottom + 20.,
         //     curr_state.control_top - 20.,
@@ -72,6 +72,7 @@ impl DougsClient {
         //     curr_state.canvas_width,
         // );
 
+        
         self.program_graph_3d.render(
             &self.gl,
             curr_state.control_bottom,
