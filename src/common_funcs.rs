@@ -100,6 +100,32 @@ pub fn get_updated_3d_y_values(curr_time: f32) -> Vec<f32> {
     y_vals
 }
 
+//
+//SPACE FOR MODIFICATIONS
+
+// pub fn get_updated_2d_y_values(curr_time: f32) -> Vec<f32> {
+//     let point_count_per_row = GRID_SIZE + 1;
+//     let mut y_vals: Vec<f32> = vec![0.; point_count_per_row * point_count_per_row];
+//     let half_grid: f32 = point_count_per_row as f32 / 2.;
+//     let frequency_scale: f32 = 3. * std::f32::consts::PI;
+//     let y_scale = 0.15;
+//     let sin_offset = curr_time / 1000.; //speed
+
+//     for z in 0..point_count_per_row {
+//         for x in 0..point_count_per_row {
+//             let use_y_index = z * point_count_per_row + x;
+//             let scaled_x = frequency_scale * (x as f32 - half_grid) / half_grid;
+//             let scaled_z = frequency_scale * (z as f32 - half_grid) / half_grid;
+//             y_vals[use_y_index] = y_scale * ((scaled_x * scaled_x + scaled_z * scaled_z).sqrt() + sin_offset).sin();
+//         }
+//     }
+
+//     y_vals
+// }
+
+//
+//SPACE FOR MODIFICATIONS
+
 pub struct Matrices3D {
     pub normals_rotation: [f32; 16],
     pub projection: [f32; 16],

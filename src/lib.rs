@@ -23,8 +23,8 @@ extern "C" {
 pub struct DougsClient {
     gl: WebGlRenderingContext,
     _program_color_2d: programs::Color2D,
-    _program_color_2d_gradient: programs::Color2DGradient,
-    program_graph_3d: programs::Graph3D,
+    //_program_color_2d_gradient: programs::Color2DGradient,
+   //program_graph_3d: programs::Graph3D,
 }
 
 #[wasm_bindgen]
@@ -36,8 +36,8 @@ impl DougsClient {
 
         Self {
             _program_color_2d: programs::Color2D::new(&gl),
-            _program_color_2d_gradient: programs::Color2DGradient::new(&gl),
-            program_graph_3d: programs::Graph3D::new(&gl),
+            //_program_color_2d_gradient: programs::Color2DGradient::new(&gl),
+            //program_graph_3d: programs::Graph3D::new(&gl),
             gl: gl,
         }
     }
@@ -52,15 +52,15 @@ impl DougsClient {
 
         let curr_state = app_state::get_curr_state();
 
-        // self.program_color_2d.render(
-        //     &self.gl,
-        //     curr_state.control_bottom,
-        //     curr_state.control_top,
-        //     curr_state.control_left,
-        //     curr_state.control_right,
-        //     curr_state.canvas_height,
-        //     curr_state.canvas_width,
-        // );
+        self._program_color_2d.render(
+            &self.gl,
+            curr_state.control_bottom,
+            curr_state.control_top,
+            curr_state.control_left,
+            curr_state.control_right,
+            curr_state.canvas_height,
+            curr_state.canvas_width,
+        );
 
         // self._program_color_2d_gradient.render(
         //     &self.gl,
@@ -73,17 +73,17 @@ impl DougsClient {
         // );
 
         
-        self.program_graph_3d.render(
-            &self.gl,
-            curr_state.control_bottom,
-            curr_state.control_top,
-            curr_state.control_left,
-            curr_state.control_right,
-            curr_state.canvas_height,
-            curr_state.canvas_width,
-            curr_state.rotation_x_axis,
-            curr_state.rotation_y_axis,
-            &common_funcs::get_updated_3d_y_values(curr_state.time),
-        );
+        // self.program_graph_3d.render(
+        //     &self.gl,
+        //     curr_state.control_bottom,
+        //     curr_state.control_top,
+        //     curr_state.control_left,
+        //     curr_state.control_right,
+        //     curr_state.canvas_height,
+        //     curr_state.canvas_width,
+        //     curr_state.rotation_x_axis,
+        //     curr_state.rotation_y_axis,
+        //     &common_funcs::get_updated_3d_y_values(curr_state.time),
+        // );
     }
 }
