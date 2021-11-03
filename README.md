@@ -34,5 +34,3 @@
 
     - NOTE: The first time you run this is may take a minute to start.  After that, is should take just a few seconds.
     - Live Reloading is enabled.  As you make Rust code changes and press "Save", the browser will automatically reload with the new code.
-
-//TEST
